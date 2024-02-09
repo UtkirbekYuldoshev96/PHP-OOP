@@ -7,9 +7,13 @@ class Person
 
       // meros olgan class ola-olad faqat
       protected $age = 18;
-      
+      public function __construct(){
+            echo "Person class-dagi constructor ishga tushdi! <br/>";
+      }
       // faqat shaxsiy class uchun ishlatsa bo'ladi meros olgan class-da ham ishlamaydi
       private $unversetet = 'TATU';
+
+
 
       public function walk()
       {
@@ -26,6 +30,7 @@ class Student extends Person
 
       // Bu yerda construct metodi class ichida automatik ishga tushadi
       public function __construct(){
+            parent::__construct();
             echo "Student this is construct class metodi start ";
       }
 
@@ -53,7 +58,7 @@ class Boy extends Person{
 $Talaba = new Student();
 
 // $Talaba();
-echo $Talaba;
+// echo $Talaba;
 // $Talaba->teach();
 // $Talaba->walk();
 // echo $Talaba->age;
